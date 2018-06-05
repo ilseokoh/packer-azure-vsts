@@ -1,8 +1,8 @@
 {
-    "client_id": "220b9c3c-fac5-4df4-bf47-3f296ecea447",
-    "client_secret": "m6TpN4BHXny1uNudjgjMqexT78ozbYqsqO9KYN+Qqg8=",
-    "tenant_id": "72f988bf-86f1-41af-91ab-2d7cd011db47",
-    "subscription_id": "e47f0bbb-cd59-41dc-86b7-2e239d536c04",
-    "object_id": "84c91560-186a-48fb-bfe6-099bc0003d7a",
-    "custom_managed_image_resource_group_name": "BaseImageGroup"
+    "client_id": "<client_id>",
+    "client_secret": "<client_secret>",
+    "tenant_id": "<tenant_id>",
+    "subscription_id": "<subscription_id>",
+    "object_id": "<object_id>",
+    "custom_managed_image_resource_group_name": "<resource group name>"
 }
