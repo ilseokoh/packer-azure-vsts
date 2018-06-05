@@ -56,9 +56,9 @@
     ],
     "post-processors": [
         {
-            "type": "manifest",
-            "output": "manifest/{{user `image_name`}}.json",
-            "strip_path": true
+            "type": "shell-local",
+            "execute_command": ["powershell.exe", "-File {{.Script}} {{user `image_name`}}"],
+            "script": "./powershell/update-latest-imagename.ps1"
         }
     ]
 }
