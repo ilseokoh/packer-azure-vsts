@@ -22,10 +22,6 @@
             "managed_image_resource_group_name": "{{user `custom_managed_image_resource_group_name`}}",
             "managed_image_name": "{{user `image_name`}}", 
 
-            "azure_tags": {
-                "latest-image": "true"
-            },
-
             "location": "Korea Central",
             "vm_size": "Standard_D2s_v3",
 
