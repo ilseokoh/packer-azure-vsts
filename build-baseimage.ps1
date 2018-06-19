@@ -10,7 +10,7 @@ $cmdArgList = @(
 	# "-debug",
 	"-var-file=.\variable.json",
 	"-var","custom_managed_image_name=$latestimagename"
-	".\bdm-baseimage.json"
+	".\baseimage.json"
 )
 
 Write-Output "image name: $latestimagename"
