@@ -1,6 +1,13 @@
-# Get Latest base image 
+# Azure RM import
 Import-Module -Name AzureRM
-Connect-AzureRmAccount
+# Get variable for service principle
+$variables = Get-Content '.\variable.json' | Out-String | ConvertFrom-Json
+$SecurePassword = $variables.client_secret | ConvertTo-SecureString -AsPlainText -Force
+$cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $variables.client_id, $SecurePassword
+# login to Azure
+Connect-AzureRmAccount -Credential $cred -Tenant $variables.tenant_id -ServicePrincipal
+
+# Get Latest base image 
 $latestimagename = (Get-AzureRmResource -ODataQuery "`$filter=tagname eq 'version' and tagvalue eq 'latest'").Name
 
 $cmdPath = "$PSScriptRoot\packer.exe"
