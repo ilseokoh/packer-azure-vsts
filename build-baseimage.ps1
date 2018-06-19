@@ -1,6 +1,7 @@
-# Get image name from text file
-$latestimagename = Get-Content .\latest-imagename.txt -Raw
-$latestimagename = $latestimagename.Trim()
+# Get Latest base image 
+Import-Module -Name AzureRM
+Connect-AzureRmAccount
+$latestimagename = (Get-AzureRmResource -ODataQuery "`$filter=tagname eq 'version' and tagvalue eq 'latest'").Name
 
 $cmdPath = "$PSScriptRoot\packer.exe"
 $cmdArgList = @(
