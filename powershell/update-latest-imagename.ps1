@@ -5,7 +5,7 @@ Param(
 # Azure RM import
 Import-Module -Name AzureRM
 # Get variable for service principle
-$variables = Get-Content '..\variable.json' | Out-String | ConvertFrom-Json
+$variables = Get-Content '.\variable.json' | Out-String | ConvertFrom-Json
 $SecurePassword = $variables.client_secret | ConvertTo-SecureString -AsPlainText -Force
 $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $variables.client_id, $SecurePassword
 # login to Azure
